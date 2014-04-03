@@ -3,7 +3,13 @@ require 'spec_helper'
 
 # Write integration tests with Serverspec - http://serverspec.org/
 describe 'etcd_ubuntu_server::default' do
-  it 'does something' do
-    pending 'Replace this with meaningful tests'
+  describe service('etcd') do
+    it { should be_enabled }
+    it { should be_running }
+  end
+
+  describe service('ssh') do
+    it { should be_enabled }
+    it { should be_running }
   end
 end

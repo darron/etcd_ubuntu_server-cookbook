@@ -5,7 +5,15 @@ require 'spec_helper'
 describe 'etcd_ubuntu_server::default' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
-  it 'does something' do
-    pending 'Replace this with meaningful tests'
+  it 'includes the `ubuntu_base` recipe' do
+    expect(chef_run).to include_recipe('ubuntu_base::default')
+  end
+
+  it 'includes the `octobase` recipe' do
+    expect(chef_run).to include_recipe('octobase::default')
+  end
+
+  it 'includes the `etcd` recipe' do
+    expect(chef_run).to include_recipe('etcd::default')
   end
 end
