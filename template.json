@@ -10,7 +10,7 @@
             "secret_key": "{{user `aws_secret_key` }}",
             "region": "us-west-2",
             "source_ami": "ami-96365da6",
-            "instance_type": "c3.medium",
+            "instance_type": "c1.medium",
             "ssh_username": "ubuntu",
             "ami_name": "etcd_ubuntu_server {{timestamp}}"
             },
