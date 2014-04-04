@@ -22,17 +22,6 @@ execute 'apt-get-update' do
   command 'apt-get update'
 end
 
-# Want to skip locale generation on Vagrant - causing
-# Vagrant to crash. It's already done in our base Ubuntu AWS build.
-
-bash 'touch locale' do
-  user 'root'
-  cwd '/tmp'
-  code <<-EOH
-    touch /root/.locale-fixed
-  EOH
-end
-
 include_recipe 'chef-sugar::default'
 
 include_recipe 'ubuntu_base::default'
